@@ -11,6 +11,6 @@ def upload_to_cloudinary(file_url, public_id=None):
     result = cloudinary.uploader.upload(
         file_url,
         resource_type="auto",
-        public_id=public_id  # الحفاظ على نفس اسم الملف
+        public_id=public_id  
     )
     return result["secure_url"]
