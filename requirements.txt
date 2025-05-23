@@ -9,3 +9,5 @@ passlib[bcrypt]
 cloudinary
 arabic-reshaper
 python-bidi
+langdetect
+python-dotenv
