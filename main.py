@@ -4,9 +4,19 @@ from utils.language_detection import detect_language
 from utils.text_processing import clean_and_split_text
 from utils.glb_mapping import get_animation_links
 from utils.cloudinary_helper import upload_to_cloudinary
+from fastapi.middleware.cors import CORSMiddleware
 import os
 
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/translate/")
 async def translate_text(text: str = Form(None), audio: UploadFile = File(None)):
